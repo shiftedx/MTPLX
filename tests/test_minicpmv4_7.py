@@ -1,10 +1,10 @@
 from types import SimpleNamespace
 from unittest.mock import patch
 
-import mlx.core as mx
-import mlx.nn as nn
 import pytest
 
+mx = pytest.importorskip("mlx.core")
+nn = pytest.importorskip("mlx.nn")
 pytest.importorskip("mlx_vlm.models.minicpmv4_7")
 from mtplx.models.minicpmv4_7 import Model, UpstreamModel
 from mtplx.runtime import _model_classes_for_config
